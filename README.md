@@ -1,3 +1,3 @@
 # compose helper
 用法: composeman [命令] <目录1> <目录2> ...
-命令支持: update(默认), start, stop, restart
+> 命令支持: update(默认), start, stop, restart
