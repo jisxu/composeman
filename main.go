@@ -40,7 +40,7 @@ func runComposeCmd(dir, action string) error {
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("用法: tool [命令] <目录1> <目录2> ...")
+		fmt.Println("用法: composeman [命令] <目录1> <目录2> ...")
 		fmt.Println("命令支持: update(默认), start, stop, restart")
 		os.Exit(1)
 	}
