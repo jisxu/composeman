@@ -7,6 +7,8 @@ import (
 	"path/filepath"
 )
 
+var Version = "dev" // 通过 -ldflags 注入实际版本
+
 func runComposeCmd(dir, action string) error {
 	var cmd *exec.Cmd
 
@@ -45,7 +47,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	action := "update"
+	action := os.Args[1]
+
+	// version 命令单独处理
+	if action == "version" {
+		fmt.Println("version:", Version)
+		os.Exit(0)
+	}
+
+	action = "update"
 	args := os.Args[1:]
 
 	// 如果第一个参数是命令
